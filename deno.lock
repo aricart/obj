@@ -1,0 +1,100 @@
+{
+  "version": "4",
+  "specifiers": {
+    "jsr:@aricart/cobra@^0.0.15": "0.0.15",
+    "jsr:@aricart/runtime@^0.0.1": "0.0.1",
+    "jsr:@nats-io/jetstream@~3.0.0-37": "3.0.0-37",
+    "jsr:@nats-io/nats-core@3.0.0-50": "3.0.0-50",
+    "jsr:@nats-io/nats-core@~3.0.0-50": "3.0.0-50",
+    "jsr:@nats-io/nkeys@~2.0.2": "2.0.2",
+    "jsr:@nats-io/nuid@~2.0.3": "2.0.3",
+    "jsr:@nats-io/obj@3.0.0-33": "3.0.0-33",
+    "jsr:@std/assert@1": "1.0.11",
+    "jsr:@std/bytes@^1.0.5": "1.0.5",
+    "jsr:@std/fmt@^1.0.3": "1.0.5",
+    "jsr:@std/internal@^1.0.5": "1.0.5",
+    "jsr:@std/io@~0.225.2": "0.225.2",
+    "npm:minimist@^1.2.8": "1.2.8",
+    "npm:tweetnacl@1.0.3": "1.0.3"
+  },
+  "jsr": {
+    "@aricart/cobra@0.0.15": {
+      "integrity": "5de03673379d7fde65073e2968e8a9da7d56963f15699c1985bdaf0a7d610780",
+      "dependencies": [
+        "jsr:@aricart/runtime",
+        "jsr:@std/fmt",
+        "npm:minimist"
+      ]
+    },
+    "@aricart/runtime@0.0.1": {
+      "integrity": "dabb1796d66582841ccd58d14b282720b75eb02013f6d2a62e2e80f5d670d653"
+    },
+    "@nats-io/jetstream@3.0.0-37": {
+      "integrity": "000934d9061176a073c4240a0ae1c2248bb78e8560f968fc43a896f6eeec308c",
+      "dependencies": [
+        "jsr:@nats-io/nats-core@~3.0.0-50"
+      ]
+    },
+    "@nats-io/nats-core@3.0.0-50": {
+      "integrity": "34eac97feb47ad8d60fd363f1019d98f78786ce2ca83d3f2fd30463ff06f0029",
+      "dependencies": [
+        "jsr:@nats-io/nkeys",
+        "jsr:@nats-io/nuid"
+      ]
+    },
+    "@nats-io/nkeys@2.0.2": {
+      "integrity": "7d61c7da8892988d5711424c4aa39ba37300373a58de4735cb92249a63b6cf0f",
+      "dependencies": [
+        "npm:tweetnacl"
+      ]
+    },
+    "@nats-io/nuid@2.0.3": {
+      "integrity": "c1069446e43dfa4f5e599c398a1bfc1be0c8dab1c839b6d2b9c3617cc1998306"
+    },
+    "@nats-io/obj@3.0.0-33": {
+      "integrity": "e20be42a3ffbb4c8a4615d1670ef1c3db857b03021068f29c4f6264b4a4516d3",
+      "dependencies": [
+        "jsr:@nats-io/jetstream",
+        "jsr:@nats-io/nats-core@~3.0.0-50"
+      ]
+    },
+    "@std/assert@1.0.11": {
+      "integrity": "2461ef3c368fe88bc60e186e7744a93112f16fd110022e113a0849e94d1c83c1",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
+    },
+    "@std/bytes@1.0.5": {
+      "integrity": "4465dd739d7963d964c809202ebea6d5c6b8e3829ef25c6a224290fbb8a1021e"
+    },
+    "@std/fmt@1.0.5": {
+      "integrity": "0cfab43364bc36650d83c425cd6d99910fc20c4576631149f0f987eddede1a4d"
+    },
+    "@std/internal@1.0.5": {
+      "integrity": "54a546004f769c1ac9e025abd15a76b6671ddc9687e2313b67376125650dc7ba"
+    },
+    "@std/io@0.225.2": {
+      "integrity": "3c740cd4ee4c082e6cfc86458f47e2ab7cb353dc6234d5e9b1f91a2de5f4d6c7",
+      "dependencies": [
+        "jsr:@std/bytes"
+      ]
+    }
+  },
+  "npm": {
+    "minimist@1.2.8": {
+      "integrity": "sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA=="
+    },
+    "tweetnacl@1.0.3": {
+      "integrity": "sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw=="
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@aricart/cobra@^0.0.15",
+      "jsr:@nats-io/nats-core@3.0.0-50",
+      "jsr:@nats-io/obj@3.0.0-33",
+      "jsr:@std/assert@1",
+      "jsr:@std/io@~0.225.2"
+    ]
+  }
+}
