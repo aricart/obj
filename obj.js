@@ -1,15 +1,14 @@
-import { wsconnect } from "@nats-io/nats-core";
+import { connect } from "@nats-io/transport-node";
 import { Objm } from "@nats-io/obj";
 import { cli } from "@aricart/cobra";
-import { SHA256, Base64Codec, Base64UrlCodec, Base64UrlPaddedCodec } from "@nats-io/obj/internal";
-import { sha256 } from "./js-sha256.js";
+import { Base64Codec, Base64UrlCodec, Base64UrlPaddedCodec } from "@nats-io/obj/internal";
 
 const root = cli({
   use: "object store test",
 });
 
-async function connect() {
-  const nc = await wsconnect({ servers: "ws://localhost:8080" });
+async function createConnection() {
+  const nc = await connect();
   const objm = new Objm(nc);
   return [nc, objm];
 }
@@ -25,7 +24,7 @@ const put = root.addCommand({
   name: "put",
   use: "put a file into the object store",
   run: async (cmd, args, flags) => {
-    const [nc, objm] = await connect();
+    const [nc, objm] = await createConnection();
     console.log(await objm.list().next());
     const os = await objm.open("test")
       .catch((err) => {
@@ -45,7 +44,7 @@ const get = root.addCommand({
   name: "get",
   use: "get a file from the object store",
   run: async (cmd, args, flags) => {
-    const [nc, objm] = await connect();
+    const [nc, objm] = await createConnection();
     const os = await objm.open("test");
     const d = await os.get(flags.value("name"));
     if (d) {
