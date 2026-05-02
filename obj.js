@@ -3,6 +3,24 @@ import { Objm } from "@nats-io/obj";
 import { cli } from "@aricart/cobra";
 import { Base64Codec, Base64UrlCodec, Base64UrlPaddedCodec } from "@nats-io/obj/internal";
 
+// opt into the native (node:crypto) sha-256 backend by setting OBJ_NATIVE_SHA=1.
+// requires @nats-io/obj 3.5.0+ (defaults to js-sha256 for browser compat).
+if (Deno.env.get("OBJ_NATIVE_SHA")) {
+  try {
+    const { setSha256Backend } = await import("@nats-io/obj/internal");
+    if (typeof setSha256Backend === "function") {
+      setSha256Backend("native");
+      console.log("sha-256: using native (node:crypto) backend");
+    } else {
+      console.warn(
+        "sha-256: setSha256Backend not exported by this @nats-io/obj version (need 3.5.0+); falling back to js-sha256",
+      );
+    }
+  } catch (err) {
+    console.warn("sha-256: native backend unavailable:", err?.message ?? err);
+  }
+}
+
 const root = cli({
   use: "object store test",
 });
