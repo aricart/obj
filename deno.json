@@ -1,12 +1,21 @@
 {
   "tasks": {
-    "dev": "deno run --watch main.ts"
+    "obj": "deno run -A obj.ts"
   },
   "imports": {
     "@aricart/cobra": "jsr:@aricart/cobra@^0.0.15",
-    "@nats-io/transport-deno": "jsr:@nats-io/transport-deno@3.0.0",
-    "@nats-io/obj": "jsr:@nats-io/obj@3.0.1",
     "@std/assert": "jsr:@std/assert@1",
-    "@std/io": "jsr:@std/io@^0.225.2",
-  }
+    "@std/io": "jsr:@std/io@0.225.2",
+    "@nats-io/nkeys": "jsr:@nats-io/nkeys@2.0.3",
+    "@nats-io/nuid": "jsr:@nats-io/nuid@3.0.0",
+    "js-sha256": "npm:js-sha256@0.11.1",
+    "@nats-io/nats-core": "../../nats-io/nats.js/core/src/mod.ts",
+    "@nats-io/nats-core/internal": "../../nats-io/nats.js/core/src/internal_mod.ts",
+    "@nats-io/transport-deno": "../../nats-io/nats.js/transport-deno/src/mod.ts",
+    "@nats-io/jetstream": "../../nats-io/nats.js/jetstream/src/mod.ts",
+    "@nats-io/jetstream/internal": "../../nats-io/nats.js/jetstream/src/internal_mod.ts",
+    "@nats-io/obj": "../../nats-io/nats.js/obj/src/mod.ts",
+    "@nats-io/obj/internal": "../../nats-io/nats.js/obj/src/internal_mod.ts"
+  },
+  "nodeModulesDir": "none"
 }
