@@ -1,0 +1,17 @@
+{
+  "name": "obj",
+  "version": "1.0.0",
+  "private": true,
+  "description": "object store test tool - runs on deno, node and bun",
+  "type": "module",
+  "scripts": {
+    "obj": "node obj.ts"
+  },
+  "dependencies": {
+    "@aricart/cobra": "npm:@jsr/aricart__cobra@^0.0.15",
+    "@nats-io/jetstream": "^3.4.0",
+    "@nats-io/nats-core": "^3.4.0",
+    "@nats-io/obj": "^3.4.0",
+    "@nats-io/transport-node": "^3.4.0"
+  }
+}
